@@ -194,18 +194,6 @@
 					/>
 				</FileConfiguration>
 			</File>
-			<File
-				RelativePath=".\WndBase.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\WndRun.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\WndTool.cpp"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -220,24 +208,48 @@
 				RelativePath=".\targetver.h"
 				>
 			</File>
-			<File
-				RelativePath=".\WndBase.h"
-				>
-			</File>
-			<File
-				RelativePath=".\WndRun.h"
-				>
-			</File>
-			<File
-				RelativePath=".\WndTool.h"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
+		</Filter>
+		<Filter
+			Name="WndClass"
+			>
+			<File
+				RelativePath=".\WndClass\WndBase.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\WndClass\WndBase.h"
+				>
+			</File>
+			<File
+				RelativePath=".\WndClass\WndEdit.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\WndClass\WndEdit.h"
+				>
+			</File>
+			<File
+				RelativePath=".\WndClass\WndRun.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\WndClass\WndRun.h"
+				>
+			</File>
+			<File
+				RelativePath=".\WndClass\WndTool.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\WndClass\WndTool.h"
+				>
+			</File>
 		</Filter>
 		<File
 			RelativePath=".\ReadMe.txt"
