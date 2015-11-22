@@ -1,6 +1,8 @@
 #include "StdAfx.h"
 #include "WndRun.h"
 
+using namespace WndHook;
+
 typedef struct _PROCESSWINDOW  
 {  
 	DWORD dwProcessId;  
@@ -32,6 +34,7 @@ bool CWndRun::Run(TCHAR* szPath, TCHAR* szCommand, RUN_TYPE nType)
 	case RUN_SHELL: return NULL != RunByShell(CString(szPath), CString(szCommand));
 	case RUN_PROCESS: return NULL != RunByProcess(CString(szPath), CString(szCommand));
 	}
+	return false;
 }
 
 bool CWndRun::Destroy()

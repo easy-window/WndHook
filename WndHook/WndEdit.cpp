@@ -1,11 +1,26 @@
 #include "StdAfx.h"
 #include "WndEdit.h"
 
-CWndEdit::CWndEdit(void)
+using namespace WndHook;
+
+
+CWndEdit::CWndEdit(void) 
+	: CWndBase()
 {
 }
 
 CWndEdit::~CWndEdit(void)
+{
+}
+
+CWndEdit::CWndEdit(HWND hWnd) 
+	: CWndBase(hWnd)
+{
+
+}
+
+CWndEdit::CWndEdit(CWnd* pWnd) 
+	: CWndBase(pWnd)
 {
 }
 

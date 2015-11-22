@@ -1,6 +1,8 @@
 #include "StdAfx.h"
 #include "WndTool.h"
 
+using namespace WndHook;
+
 CWnd* CWndTool::GetWindow(HWND hWnd)
 {
 	return CWnd::FromHandle(hWnd);

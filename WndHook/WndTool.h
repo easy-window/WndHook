@@ -30,15 +30,19 @@
 #define VK_Y			0x59
 #define VK_Z			0x5A
 
-class CWndTool
-{
-public:
-	static CWnd*	GetWindow(HWND hWnd);
-	static HWND		GetHandle(CWnd* pWnd);
-	static CString	GetCurDirectory();
-	static LPTSTR	ConvertErrorCodeToString(DWORD dwErrorCode);
-	static bool		CopytoTheClipboard(CString sValue, HWND hWnd);
-	static bool		KeyBoardPress(BYTE vk, bool bAlt, bool bShift, bool bCtrl);
-	static bool		MouseClick(int nX, int nY);
+namespace WndHook {
 
-};
+	class CWndTool
+	{
+	public:
+		static CWnd*	GetWindow(HWND hWnd);
+		static HWND		GetHandle(CWnd* pWnd);
+		static CString	GetCurDirectory();
+		static LPTSTR	ConvertErrorCodeToString(DWORD dwErrorCode);
+		static bool		CopytoTheClipboard(CString sValue, HWND hWnd);
+		static bool		KeyBoardPress(BYTE vk, bool bAlt, bool bShift, bool bCtrl);
+		static bool		MouseClick(int nX, int nY);
+
+	};
+
+}

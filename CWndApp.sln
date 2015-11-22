@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CWndApp", "CWndApp\CWndApp.vcproj", "{D2CA609E-77DE-4AFA-8ADE-91AED607C8F0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WndDemo", "WndDemo\WndDemo.vcproj", "{F058858C-2697-4455-95C4-061CCCD874E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D2CA609E-77DE-4AFA-8ADE-91AED607C8F0}.Debug|Win32.ActiveCfg = Debug|Win32
-		{D2CA609E-77DE-4AFA-8ADE-91AED607C8F0}.Debug|Win32.Build.0 = Debug|Win32
-		{D2CA609E-77DE-4AFA-8ADE-91AED607C8F0}.Release|Win32.ActiveCfg = Release|Win32
-		{D2CA609E-77DE-4AFA-8ADE-91AED607C8F0}.Release|Win32.Build.0 = Release|Win32
+		{F058858C-2697-4455-95C4-061CCCD874E4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F058858C-2697-4455-95C4-061CCCD874E4}.Debug|Win32.Build.0 = Debug|Win32
+		{F058858C-2697-4455-95C4-061CCCD874E4}.Release|Win32.ActiveCfg = Release|Win32
+		{F058858C-2697-4455-95C4-061CCCD874E4}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

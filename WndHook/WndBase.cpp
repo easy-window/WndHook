@@ -1,6 +1,8 @@
 #include "StdAfx.h"
 #include "WndBase.h"
 
+using namespace WndHook;
+
 CWndBase::CWndBase(void)
 {
 	Reset();
