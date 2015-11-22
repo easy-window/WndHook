@@ -270,6 +270,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\WndHook\WndButton.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\WndHook\WndButton.h"
+				>
+			</File>
+			<File
 				RelativePath="..\WndHook\WndDialog.cpp"
 				>
 			</File>

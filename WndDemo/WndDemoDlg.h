@@ -41,4 +41,5 @@ public:
 	afx_msg void OnBnClickedBtnEdtSettext();
 	afx_msg void OnBnClickedBtnPaste();
 	afx_msg void OnBnClickedBtnReadonly();
+	afx_msg void OnBnClickedBtnEdtSelect();
 };
