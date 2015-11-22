@@ -126,6 +126,7 @@ bool CWndBase::SetText(TCHAR* szText)
 {
 	if(NULL == m_hWnd) return false;
 	::SendMessage(m_hWnd, WM_SETTEXT, 0, (LPARAM)szText);
+	return true;
 }
 
 int CWndBase::GetTextLength()
