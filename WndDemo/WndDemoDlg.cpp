@@ -29,8 +29,17 @@ void CWndDemoDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CWndDemoDlg, CDialog)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_BTN_EDT_GETTEXT, &CWndDemoDlg::OnBnClickedBtnEdtGettext)
+	ON_BN_CLICKED(IDC_BTN_GETDIALOG, &CWndDemoDlg::OnBnClickedBtnGetdialog)
+	ON_BN_CLICKED(IDC_BTN_GETEDIT, &CWndDemoDlg::OnBnClickedBtnGetedit)
 	//}}AFX_MSG_MAP
-	ON_BN_CLICKED(IDC_BUTTON1, &CWndDemoDlg::OnBnClickedButton1)
+	ON_BN_CLICKED(IDC_BTN_DLG_MIN, &CWndDemoDlg::OnBnClickedBtnDlgMin)
+	ON_BN_CLICKED(IDC_BTN_DLG_MAX, &CWndDemoDlg::OnBnClickedBtnDlgMax)
+	ON_BN_CLICKED(IDC_BTN_DLG_RESTORE, &CWndDemoDlg::OnBnClickedBtnDlgRestore)
+	ON_BN_CLICKED(IDC_BTN_DLG_CLOSE, &CWndDemoDlg::OnBnClickedBtnDlgClose)
+	ON_BN_CLICKED(IDC_BTN_EDT_SETTEXT, &CWndDemoDlg::OnBnClickedBtnEdtSettext)
+	ON_BN_CLICKED(IDC_BTN_PASTE, &CWndDemoDlg::OnBnClickedBtnPaste)
+	ON_BN_CLICKED(IDC_BTN_READONLY, &CWndDemoDlg::OnBnClickedBtnReadonly)
 END_MESSAGE_MAP()
 
 
@@ -86,15 +95,60 @@ HCURSOR CWndDemoDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
-
-void CWndDemoDlg::OnBnClickedButton1()
+void CWndDemoDlg::OnBnClickedBtnGetdialog()
 {
-	HWND hWnd = ::FindWindow(NULL, _T("Demo"));
-	HWND hEditWnd = ::FindWindowEx(hWnd, NULL, _T("Edit"), NULL);
+	m_dlgHook.Init(::FindWindow(NULL, _T("Test")));
+}
 
-	CWndEdit edit(hEditWnd);
+void CWndDemoDlg::OnBnClickedBtnGetedit()
+{
+	m_editHook.Init(m_dlgHook.GetChild(0, NULL, _T("Edit"), NULL));
+}
+
+void CWndDemoDlg::OnBnClickedBtnDlgMin()
+{
+	m_dlgHook.MinSize();
+}
+
+void CWndDemoDlg::OnBnClickedBtnDlgMax()
+{
+	m_dlgHook.MaxSize();
+}
+
+void CWndDemoDlg::OnBnClickedBtnDlgRestore()
+{
+	m_dlgHook.Restore();
+}
+
+void CWndDemoDlg::OnBnClickedBtnDlgClose()
+{
+	m_dlgHook.Close();
+}
+
+void CWndDemoDlg::OnBnClickedBtnEdtGettext()
+{
 	TCHAR szText[1024];
 	int nLen = 1024;
-	edit.GetText(szText, nLen);
-	AfxMessageBox(szText);
+	if(m_editHook.GetText(szText, nLen))
+		AfxMessageBox(szText);
+}
+void CWndDemoDlg::OnBnClickedBtnEdtSettext()
+{
+	CString sText;
+	((CEdit*)GetDlgItem(IDC_EDIT_TEXT))->GetWindowText(sText);
+	m_editHook.SetText(sText.GetBuffer());
+	sText.ReleaseBuffer();
+}
+
+void CWndDemoDlg::OnBnClickedBtnPaste()
+{
+	CString sText;
+	((CEdit*)GetDlgItem(IDC_EDIT_TEXT))->GetWindowText(sText);
+	m_editHook.PasteTo(sText.GetBuffer());
+	sText.ReleaseBuffer();
+}
+
+void CWndDemoDlg::OnBnClickedBtnReadonly()
+{
+	m_editHook.ReadOnly(!m_editHook.IsReadOnly());
 }

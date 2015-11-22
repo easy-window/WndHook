@@ -54,7 +54,7 @@ BEGIN
     "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
     "LANGUAGE 9, 1\r\n"
     "#pragma code_page(1252)\r\n"
-    "#include ""res\\WndDemo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""res\\Test.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
     "#include ""afxres.rc""     // Standard components\r\n"
     "#endif\r\n"
     "\0"
@@ -70,7 +70,7 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDR_MAINFRAME           ICON                    "res\\WndDemo.ico"
+IDR_MAINFRAME           ICON                    "res\\Test.ico"
 #endif    // Chinese (P.R.C.) resources
 /////////////////////////////////////////////////////////////////////////////
 
@@ -89,25 +89,18 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // Dialog
 //
 
-IDD_WNDDEMO_DIALOG DIALOGEX 0, 0, 320, 200
+IDD_TEST_DIALOG DIALOGEX 0, 0, 320, 200
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
-CAPTION "WndDemo"
+CAPTION "Test"
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,209,179,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,263,179,50,14
-    PUSHBUTTON      "GetText",IDC_BTN_EDT_GETTEXT,75,37,50,14
-    PUSHBUTTON      "Min",IDC_BTN_DLG_MIN,75,15,50,14
-    PUSHBUTTON      "Max",IDC_BTN_DLG_MAX,131,15,50,14
-    PUSHBUTTON      "Restore",IDC_BTN_DLG_RESTORE,187,15,50,14
-    PUSHBUTTON      "Close",IDC_BTN_DLG_CLOSE,243,15,50,14
-    PUSHBUTTON      "GetDialog",IDC_BTN_GETDIALOG,19,15,50,14
-    PUSHBUTTON      "GetEdit",IDC_BTN_GETEDIT,19,37,50,14
-    PUSHBUTTON      "Paste",IDC_BTN_PASTE,187,37,50,14
-    EDITTEXT        IDC_EDIT_TEXT,243,37,50,14,ES_AUTOHSCROLL
-    PUSHBUTTON      "SetText",IDC_BTN_EDT_SETTEXT,131,37,50,14
-    PUSHBUTTON      "ReadOnly",IDC_BTN_READONLY,75,57,50,14
+    PUSHBUTTON      "Button 1",IDC_BUTTON1,7,7,50,14
+    EDITTEXT        IDC_EDIT1,7,27,92,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,7,52,90,65,ES_MULTILINE | ES_AUTOVSCROLL | WS_VSCROLL
+    EDITTEXT        IDC_EDIT3,7,127,90,14,ES_PASSWORD | ES_AUTOHSCROLL
 END
 
 
@@ -136,9 +129,9 @@ BEGIN
             VALUE "CompanyName", "TODO: <Company name>"
             VALUE "FileDescription", "TODO: <File description>"
             VALUE "FileVersion", "1.0.0.1"
-            VALUE "InternalName", "WndDemo.exe"
+            VALUE "InternalName", "Test.exe"
             VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
-            VALUE "OriginalFilename", "WndDemo.exe"
+            VALUE "OriginalFilename", "Test.exe"
             VALUE "ProductName", "TODO: <Product name>"
             VALUE "ProductVersion", "1.0.0.1"
         END
@@ -158,7 +151,7 @@ END
 #ifdef APSTUDIO_INVOKED
 GUIDELINES DESIGNINFO 
 BEGIN
-    IDD_WNDDEMO_DIALOG, DIALOG
+    IDD_TEST_DIALOG, DIALOG
     BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 313
@@ -186,7 +179,7 @@ END
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE 9, 1
 #pragma code_page(1252)
-#include "res\WndDemo.rc2"  // non-Microsoft Visual C++ edited resources
+#include "res\Test.rc2"  // non-Microsoft Visual C++ edited resources
 #include "afxres.rc"     // Standard components
 #endif
 

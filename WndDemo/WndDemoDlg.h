@@ -26,7 +26,19 @@ protected:
 	virtual BOOL OnInitDialog();
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
+	afx_msg void OnBnClickedBtnGetdialog();
+	afx_msg void OnBnClickedBtnGetedit();
+	afx_msg void OnBnClickedBtnEdtGettext();
 	DECLARE_MESSAGE_MAP()
+
 public:
-	afx_msg void OnBnClickedButton1();
+	CWndDialog m_dlgHook;
+	CWndEdit m_editHook;
+	afx_msg void OnBnClickedBtnDlgMin();
+	afx_msg void OnBnClickedBtnDlgMax();
+	afx_msg void OnBnClickedBtnDlgRestore();
+	afx_msg void OnBnClickedBtnDlgClose();
+	afx_msg void OnBnClickedBtnEdtSettext();
+	afx_msg void OnBnClickedBtnPaste();
+	afx_msg void OnBnClickedBtnReadonly();
 };

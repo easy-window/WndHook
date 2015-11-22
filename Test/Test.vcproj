@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="WndDemo"
-	ProjectGUID="{F058858C-2697-4455-95C4-061CCCD874E4}"
-	RootNamespace="WndDemo"
+	Name="Test"
+	ProjectGUID="{9B565EE9-45F4-4E15-841E-1208F1CCAB85}"
+	RootNamespace="Test"
 	Keyword="MFCProj"
 	TargetFrameworkVersion="196613"
 	>
@@ -21,7 +21,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			UseOfMFC="1"
+			UseOfMFC="2"
 			CharacterSet="1"
 			>
 			<Tool
@@ -48,7 +48,7 @@
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="1"
+				RuntimeLibrary="3"
 				UsePrecompiledHeader="2"
 				WarningLevel="3"
 				DebugInformationFormat="4"
@@ -99,7 +99,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			UseOfMFC="1"
+			UseOfMFC="2"
 			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
@@ -127,7 +127,7 @@
 				EnableIntrinsicFunctions="true"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG"
 				MinimalRebuild="false"
-				RuntimeLibrary="0"
+				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="2"
 				WarningLevel="3"
@@ -206,11 +206,11 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath=".\WndDemo.cpp"
+				RelativePath=".\Test.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\WndDemoDlg.cpp"
+				RelativePath=".\TestDlg.cpp"
 				>
 			</File>
 		</Filter>
@@ -232,11 +232,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\WndDemo.h"
+				RelativePath=".\Test.h"
 				>
 			</File>
 			<File
-				RelativePath=".\WndDemoDlg.h"
+				RelativePath=".\TestDlg.h"
 				>
 			</File>
 		</Filter>
@@ -246,63 +246,15 @@
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
 			<File
-				RelativePath=".\res\WndDemo.ico"
+				RelativePath=".\res\Test.ico"
 				>
 			</File>
 			<File
-				RelativePath=".\WndDemo.rc"
+				RelativePath=".\Test.rc"
 				>
 			</File>
 			<File
-				RelativePath=".\res\WndDemo.rc2"
-				>
-			</File>
-		</Filter>
-		<Filter
-			Name="WndHook"
-			>
-			<File
-				RelativePath="..\WndHook\WndBase.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\WndHook\WndBase.h"
-				>
-			</File>
-			<File
-				RelativePath="..\WndHook\WndDialog.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\WndHook\WndDialog.h"
-				>
-			</File>
-			<File
-				RelativePath="..\WndHook\WndEdit.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\WndHook\WndEdit.h"
-				>
-			</File>
-			<File
-				RelativePath="..\WndHook\WndHook.h"
-				>
-			</File>
-			<File
-				RelativePath="..\WndHook\WndRun.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\WndHook\WndRun.h"
-				>
-			</File>
-			<File
-				RelativePath="..\WndHook\WndTool.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\WndHook\WndTool.h"
+				RelativePath=".\res\Test.rc2"
 				>
 			</File>
 		</Filter>
@@ -314,7 +266,7 @@
 	<Globals>
 		<Global
 			Name="RESOURCE_FILE"
-			Value="WndDemo.rc"
+			Value="Test.rc"
 		/>
 	</Globals>
 </VisualStudioProject>

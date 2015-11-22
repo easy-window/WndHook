@@ -19,6 +19,8 @@ namespace WndHook {
 		CWndBase(CWnd* pWnd);
 		~CWndBase(void);
 
+		void  Init(HWND hWnd);
+		void  Init(CWnd* pWnd);
 		void  Reset();
 		CWnd* GetWindow();
 		HWND  GetHandle();
@@ -33,7 +35,7 @@ namespace WndHook {
 		void  SetPosTop(bool bAlway = false);
 
 		bool GetText(TCHAR* szText, int& nMaxCount);
-		void SetText(TCHAR* szText);
+		bool SetText(TCHAR* szText);
 		int  GetTextLength();
 
 		HWND m_hWnd;

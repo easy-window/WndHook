@@ -10,6 +10,7 @@ CWnd* CWndTool::GetWindow(HWND hWnd)
 
 HWND CWndTool::GetHandle(CWnd* pWnd)
 {
+	if(NULL == pWnd) return NULL;
 	return pWnd->GetSafeHwnd();
 }
 
@@ -33,6 +34,7 @@ LPTSTR CWndTool::ConvertErrorCodeToString(DWORD dwErrorCode)
 
 bool CWndTool::CopytoTheClipboard(CString sValue, HWND hWnd)
 {
+	if(NULL == hWnd) return NULL;
 	if(::OpenClipboard(hWnd))
 	{   
 		HGLOBAL hClip;
