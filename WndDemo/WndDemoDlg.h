@@ -29,11 +29,6 @@ protected:
 	afx_msg void OnBnClickedBtnGetdialog();
 	afx_msg void OnBnClickedBtnGetedit();
 	afx_msg void OnBnClickedBtnEdtGettext();
-	DECLARE_MESSAGE_MAP()
-
-public:
-	CWndDialog m_dlgHook;
-	CWndEdit m_editHook;
 	afx_msg void OnBnClickedBtnDlgMin();
 	afx_msg void OnBnClickedBtnDlgMax();
 	afx_msg void OnBnClickedBtnDlgRestore();
@@ -42,4 +37,14 @@ public:
 	afx_msg void OnBnClickedBtnPaste();
 	afx_msg void OnBnClickedBtnReadonly();
 	afx_msg void OnBnClickedBtnEdtSelect();
+	afx_msg void OnBnClickedBtnButton();
+	afx_msg void OnBnClickedBtnLeft();
+	DECLARE_MESSAGE_MAP()
+
+public:
+	CWndDialog m_dlgHook;
+	CWndEdit m_editHook;
+	CWndButton m_btnHook;
+	afx_msg void OnBnClickedBtnRight();
+	afx_msg void OnBnClickedBtnSetcheck();
 };

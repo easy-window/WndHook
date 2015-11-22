@@ -41,6 +41,10 @@ BEGIN_MESSAGE_MAP(CWndDemoDlg, CDialog)
 	ON_BN_CLICKED(IDC_BTN_PASTE, &CWndDemoDlg::OnBnClickedBtnPaste)
 	ON_BN_CLICKED(IDC_BTN_READONLY, &CWndDemoDlg::OnBnClickedBtnReadonly)
 	ON_BN_CLICKED(IDC_BTN_EDT_SELECT, &CWndDemoDlg::OnBnClickedBtnEdtSelect)
+	ON_BN_CLICKED(IDC_BTN_BUTTON, &CWndDemoDlg::OnBnClickedBtnButton)
+	ON_BN_CLICKED(IDC_BTN_LEFT, &CWndDemoDlg::OnBnClickedBtnLeft)
+	ON_BN_CLICKED(IDC_BTN_RIGHT, &CWndDemoDlg::OnBnClickedBtnRight)
+	ON_BN_CLICKED(IDC_BTN_SETCHECK, &CWndDemoDlg::OnBnClickedBtnSetcheck)
 END_MESSAGE_MAP()
 
 
@@ -55,8 +59,8 @@ BOOL CWndDemoDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
-	// TODO: Add extra initialization here
-
+	((CEdit*)GetDlgItem(IDC_EDIT_FORM))->SetWindowText(_T("Test"));
+	
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
@@ -98,7 +102,13 @@ HCURSOR CWndDemoDlg::OnQueryDragIcon()
 
 void CWndDemoDlg::OnBnClickedBtnGetdialog()
 {
-	m_dlgHook.Init(::FindWindow(NULL, _T("Test")));
+	CString sClass, sForm;
+	((CEdit*)GetDlgItem(IDC_EDIT_CLASS))->GetWindowText(sClass);
+	((CEdit*)GetDlgItem(IDC_EDIT_FORM))->GetWindowText(sForm);
+	m_dlgHook.Init(::FindWindow(sClass.IsEmpty() ? NULL : sClass.GetBuffer(), sForm.IsEmpty() ? NULL : sForm.GetBuffer()));
+	if(!sClass.IsEmpty()) sClass.ReleaseBuffer();
+	if(!sForm.IsEmpty()) sForm.ReleaseBuffer();
+	if(NULL != m_dlgHook.GetHandle()) AfxMessageBox(_T("Get Dialog Failed..."));
 }
 
 void CWndDemoDlg::OnBnClickedBtnGetedit()
@@ -106,6 +116,7 @@ void CWndDemoDlg::OnBnClickedBtnGetedit()
 	CString sText;
 	((CEdit*)GetDlgItem(IDC_EDIT_INDEX))->GetWindowText(sText);
 	m_editHook.Init(m_dlgHook.GetChild(_ttoi(sText), NULL, _T("Edit"), NULL));
+	if(NULL != m_editHook.GetHandle()) AfxMessageBox(_T("Get Edit Failed..."));
 }
 
 void CWndDemoDlg::OnBnClickedBtnDlgMin()
@@ -162,4 +173,27 @@ void CWndDemoDlg::OnBnClickedBtnEdtSelect()
 	((CEdit*)GetDlgItem(IDC_EDIT_BEGIN))->GetWindowText(sBegin);
 	((CEdit*)GetDlgItem(IDC_EDIT_END))->GetWindowText(sEnd);
 	m_editHook.SetSelect(_ttoi(sBegin), _ttoi(sEnd));
+}
+
+void CWndDemoDlg::OnBnClickedBtnButton()
+{
+	CString sText;
+	((CEdit*)GetDlgItem(IDC_EDIT_INDEX))->GetWindowText(sText);
+	m_btnHook.Init(m_dlgHook.GetChild(_ttoi(sText), NULL, _T("Button"), NULL));
+	if(NULL != m_btnHook.GetHandle()) AfxMessageBox(_T("Get Button Failed..."));
+}
+
+void CWndDemoDlg::OnBnClickedBtnLeft()
+{
+	m_btnHook.LeftClick(CPoint(5,5));
+}
+
+void CWndDemoDlg::OnBnClickedBtnRight()
+{
+	m_btnHook.RightClick();
+}
+
+void CWndDemoDlg::OnBnClickedBtnSetcheck()
+{
+	m_btnHook.SetCheck(!m_btnHook.IsCheck());
 }
