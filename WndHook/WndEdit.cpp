@@ -24,11 +24,20 @@ CWndEdit::CWndEdit(CWnd* pWnd)
 {
 }
 
-void CWndEdit::PasteTo(TCHAR* szText)
+bool CWndEdit::SetSelect(int nBegin, int nEnd, bool bFocus)
 {
-	if(NULL == m_hWnd) return;
+	if(NULL == m_hWnd) return false;
+	if(bFocus) ::SetFocus(m_hWnd);
+	::SendMessage(m_hWnd, EM_SETSEL, nBegin, nEnd);
+	return true;
+}
+
+bool CWndEdit::PasteTo(TCHAR* szText)
+{
+	if(NULL == m_hWnd) return false;
 	CWndTool::CopytoTheClipboard(CString(szText), m_hWnd);
 	((CEdit*)GetWindow())->Paste();
+	return true;
 }
 
 bool CWndEdit::ReadOnly(bool bReadOnly)

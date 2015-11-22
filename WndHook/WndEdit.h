@@ -12,7 +12,8 @@ namespace WndHook {
 
 		~CWndEdit(void);
 
-		void PasteTo(TCHAR* szText);
+		bool SetSelect(int nBegin, int nEnd, bool bFocus = true); // 0 ~ -1 is select all
+		bool PasteTo(TCHAR* szText);
 		bool ReadOnly(bool bReadOnly = true);
 		bool GetText(TCHAR* szText, int& nMaxLen);
 
