@@ -7,5 +7,6 @@
 #include "WndRun.h"
 #include "WndDialog.h"
 #include "WndEdit.h"
+#include "WndButton.h"
 
 using namespace WndHook;
