@@ -40,6 +40,7 @@ BEGIN_MESSAGE_MAP(CWndDemoDlg, CDialog)
 	ON_BN_CLICKED(IDC_BTN_EDT_SETTEXT, &CWndDemoDlg::OnBnClickedBtnEdtSettext)
 	ON_BN_CLICKED(IDC_BTN_PASTE, &CWndDemoDlg::OnBnClickedBtnPaste)
 	ON_BN_CLICKED(IDC_BTN_READONLY, &CWndDemoDlg::OnBnClickedBtnReadonly)
+	ON_BN_CLICKED(IDC_BTN_EDT_SELECT, &CWndDemoDlg::OnBnClickedBtnEdtSelect)
 END_MESSAGE_MAP()
 
 
@@ -102,7 +103,9 @@ void CWndDemoDlg::OnBnClickedBtnGetdialog()
 
 void CWndDemoDlg::OnBnClickedBtnGetedit()
 {
-	m_editHook.Init(m_dlgHook.GetChild(0, NULL, _T("Edit"), NULL));
+	CString sText;
+	((CEdit*)GetDlgItem(IDC_EDIT_INDEX))->GetWindowText(sText);
+	m_editHook.Init(m_dlgHook.GetChild(_ttoi(sText), NULL, _T("Edit"), NULL));
 }
 
 void CWndDemoDlg::OnBnClickedBtnDlgMin()
@@ -151,4 +154,12 @@ void CWndDemoDlg::OnBnClickedBtnPaste()
 void CWndDemoDlg::OnBnClickedBtnReadonly()
 {
 	m_editHook.ReadOnly(!m_editHook.IsReadOnly());
+}
+
+void CWndDemoDlg::OnBnClickedBtnEdtSelect()
+{
+	CString sBegin, sEnd;
+	((CEdit*)GetDlgItem(IDC_EDIT_BEGIN))->GetWindowText(sBegin);
+	((CEdit*)GetDlgItem(IDC_EDIT_END))->GetWindowText(sEnd);
+	m_editHook.SetSelect(_ttoi(sBegin), _ttoi(sEnd));
 }
