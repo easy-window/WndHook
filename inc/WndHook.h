@@ -8,5 +8,6 @@
 #include "WndDialog.h"
 #include "WndEdit.h"
 #include "WndButton.h"
+#include "WndCombox.h"
 
 using namespace WndHook;
