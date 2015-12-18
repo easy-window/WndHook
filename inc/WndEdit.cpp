@@ -43,7 +43,7 @@ bool CWndEdit::PasteTo(TCHAR* szText)
 bool CWndEdit::ReadOnly(bool bReadOnly)
 {
 	if(NULL == m_hWnd) return false;
-	return ((CEdit*)GetWindow())->SetReadOnly(bReadOnly ? TRUE :FALSE) == TRUE;
+	return ::SendMessage(m_hWnd, EM_SETREADONLY, bReadOnly? TRUE : FALSE, 0) == TRUE;
 }
 
 bool CWndEdit::IsReadOnly()

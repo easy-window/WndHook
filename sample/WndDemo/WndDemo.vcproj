@@ -67,7 +67,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				LinkIncremental="2"
+				LinkIncremental="1"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				TargetMachine="1"
@@ -259,58 +259,66 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="WndHook"
+			Name="inc"
 			>
 			<File
-				RelativePath="..\WndHook\WndBase.cpp"
+				RelativePath="..\..\inc\WndBase.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\WndHook\WndBase.h"
+				RelativePath="..\..\inc\WndBase.h"
 				>
 			</File>
 			<File
-				RelativePath="..\WndHook\WndButton.cpp"
+				RelativePath="..\..\inc\WndButton.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\WndHook\WndButton.h"
+				RelativePath="..\..\inc\WndButton.h"
 				>
 			</File>
 			<File
-				RelativePath="..\WndHook\WndDialog.cpp"
+				RelativePath="..\..\inc\WndCombox.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\WndHook\WndDialog.h"
+				RelativePath="..\..\inc\WndCombox.h"
 				>
 			</File>
 			<File
-				RelativePath="..\WndHook\WndEdit.cpp"
+				RelativePath="..\..\inc\WndDialog.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\WndHook\WndEdit.h"
+				RelativePath="..\..\inc\WndDialog.h"
 				>
 			</File>
 			<File
-				RelativePath="..\WndHook\WndHook.h"
+				RelativePath="..\..\inc\WndEdit.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\WndHook\WndRun.cpp"
+				RelativePath="..\..\inc\WndEdit.h"
 				>
 			</File>
 			<File
-				RelativePath="..\WndHook\WndRun.h"
+				RelativePath="..\..\inc\WndHook.h"
 				>
 			</File>
 			<File
-				RelativePath="..\WndHook\WndTool.cpp"
+				RelativePath="..\..\inc\WndRun.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\WndHook\WndTool.h"
+				RelativePath="..\..\inc\WndRun.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\inc\WndTool.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\inc\WndTool.h"
 				>
 			</File>
 		</Filter>

@@ -45,7 +45,15 @@ BOOL CTestDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
-	// TODO: Add extra initialization here
+	((CComboBox*)GetDlgItem(IDC_COMBO1))->AddString(_T("Apple"));
+	((CComboBox*)GetDlgItem(IDC_COMBO1))->AddString(_T("Orange"));
+	((CComboBox*)GetDlgItem(IDC_COMBO1))->AddString(_T("Banana"));
+	((CComboBox*)GetDlgItem(IDC_COMBO1))->AddString(_T("Pear"));
+
+	((CListBox*)GetDlgItem(IDC_LIST1))->InsertString(0, _T("Apple"));
+	((CListBox*)GetDlgItem(IDC_LIST1))->InsertString(1, _T("Orange"));
+	((CListBox*)GetDlgItem(IDC_LIST1))->InsertString(2, _T("Banana"));
+	((CListBox*)GetDlgItem(IDC_LIST1))->InsertString(3, _T("Pear"));
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }

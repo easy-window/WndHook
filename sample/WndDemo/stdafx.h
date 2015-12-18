@@ -55,4 +55,4 @@
 #endif
 
 
-#include "../WndHook/WndHook.h"
+#include "../../inc/WndHook.h"
